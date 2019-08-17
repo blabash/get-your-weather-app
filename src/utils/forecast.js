@@ -10,7 +10,9 @@ const forecast = (latitude, longitude, callback) => {
             callback('Poorly formatted request, please try again.', undefined)
         } else {
             callback(undefined, 
-                `${body.daily.data[0].summary} It is currently ${body.currently.temperature} degrees.  There is a ${body.currently.precipProbability}% chance of rain.`
+                `${body.daily.data[0].summary} It is currently ${body.currently.temperature}°F. 
+                There is a ${body.currently.precipProbability}% chance of rain.  The daily high will be ${body.daily.data[0].temperatureHigh}°F with
+                a humidity of ${body.currently.humidity}g/m^3.`
             )
         }
     })
